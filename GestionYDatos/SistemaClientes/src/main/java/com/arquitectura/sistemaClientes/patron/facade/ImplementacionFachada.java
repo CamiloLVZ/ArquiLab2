@@ -40,13 +40,11 @@ public class ImplementacionFachada implements IFacade {
     public String informacionEnviadaSubsistema() {
         String texto = "\n--- Informacion enviada ---";
 
-        if (claseA != null && claseB != null && claseC != null) {
-            texto += "\nClaseA: " + claseA.getId() + " " +
-                    claseA.getNombre() + " " +
-                    claseA.getApellido();
-
-            texto += "\nClaseB: " + claseB.mensajeEnviado();
-            texto += "\nClaseC: " + claseC.getTexto();
+        if (clienteDAO != null) {
+            String consulta = clienteDAO.consultarTodos();
+            texto += consulta;
+        } else {
+            texto += "\nError: clienteDAO es null";
         }
 
         return texto;

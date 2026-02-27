@@ -1,0 +1,10 @@
+2026-02-26 18:47:12.433113-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * [*]CLIENTES"
+Syntax error in SQL statement "SELECT * [*]CLIENTES"; SQL statement:
+SELECT * CLIENTES [42000-232]
+2026-02-26 18:47:17.363486-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTES" not found (this database is empty); SQL statement:
+SELECT * FROM CLIENTES [42104-232]
+2026-02-26 18:47:26.171455-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTES" not found (this database is empty); SQL statement:
+SELECT * FROM clientes [42104-232]

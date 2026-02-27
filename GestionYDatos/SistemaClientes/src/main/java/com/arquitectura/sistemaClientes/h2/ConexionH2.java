@@ -7,9 +7,17 @@ import java.sql.SQLException;
 
 public class ConexionH2 {
 
-    private static final String URL = "jdbc:h2:././GestionYDatos/SistemaClientes/basedatos/clientes";
+    private static final String URL = "jdbc:h2:../GestionYDatos/SistemaClientes/basedatos/clientes";
     private static final String USER = "sa";
     private static final String PASS = "";
+
+    static {
+        try {
+            Class.forName("org.h2.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException("No se pudo cargar el driver H2", e);
+        }
+    }
 
     public static Connection obtenerConexion() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASS);
